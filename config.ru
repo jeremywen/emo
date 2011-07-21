@@ -1,2 +1,2 @@
 require 'butler'
-run Sinatra::Aplplication
+run Sinatra::Application
