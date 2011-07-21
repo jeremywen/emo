@@ -1,2 +1,2 @@
-require 'butler'
+require './butler'
 run Sinatra::Application
