@@ -28,7 +28,7 @@ helpers do
     html="<html><body>"
     chars = File.readlines("possible_chars.txt")
     x.times { |ch|
-      html+="<div style='font-family:Monospace;width:75px;float:left'><code>"
+      html+="<div style='font-family:Monospace;height:50px;width:50px;float:left'><code>"
       outter = chars[rand(chars.size)].chomp
       inner = chars[rand(chars.size)].chomp
       html+=outter+inner+outter
