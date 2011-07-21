@@ -10,11 +10,13 @@ get "/" do
 end
 
 get "/emo" do
-  gen_emo(1000)
+  @emos = gen_emo(1000)
+  erb :emo
 end
 
 get "/emo/:times" do
-  gen_emo(params[:times].to_i)
+  @emos = gen_emo(params[:times].to_i)
+  erb :emo
 end
 
 helpers do
@@ -25,16 +27,16 @@ helpers do
   end
 
   def gen_emo(x)
-    html="<html><body>"
+    html = ""
     chars = File.readlines("possible_chars.txt")
     x.times { |ch|
-      html+="<div style='font-family:Monospace;height:50px;width:50px;float:left'><code>"
+      html+="<div class='emo'><code>"
       outter = chars[rand(chars.size)].chomp
       inner = chars[rand(chars.size)].chomp
       html+=outter+inner+outter
       html+="</code></div>"
     } 
-    html+="</body></html>"
+    html
   end
 
 end
