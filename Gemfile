@@ -1,3 +1,4 @@
 source 'http://rubygems.org'
-gem 'sinatra/url_for'
+source 'http://gems.github.com'
+gem 'emk-sinatra-url-for'
 gem 'sinatra'
