@@ -145,7 +145,7 @@ var Flash9Clipboard = Class.create(Abstract.Clipboard, {initialize: function($su
         }
         $(this.id).update(this._flashEmbedHTML(a))
     },_flashEmbedHTML: function(a) {
-        return '<embed src="flash/clipboard.swf" FlashVars="clipboard=' + encodeURIComponent(a) + '" width="0" height="0" type="application/x-shockwave-flash"></embed>'
+        return '<embed src="/flash/clipboard.swf" FlashVars="clipboard=' + encodeURIComponent(a) + '" width="0" height="0" type="application/x-shockwave-flash"></embed>'
     }});
 var Flash10Clipboard = Class.create(Abstract.Clipboard, {initialize: function($super) {
         this.VERSION = "10";
@@ -157,7 +157,7 @@ var Flash10Clipboard = Class.create(Abstract.Clipboard, {initialize: function($s
         $(document.body).insert({bottom: new Element("div", {id: "copy_button"}).setStyle("position: absolute; left: -99px; top: -99px; width: 1px; height: 1px;").update('<div id="copy_button_flash"></div>')})
     },embed: function() {
         var a = {allowScriptAccess: "always",wmode: "transparent",scale: "exactfit"};
-        swfobject.embedSWF("flash/copy_button.swf?1.1", "copy_button_flash", "1", "1", "8", null, {}, a, {})
+        swfobject.embedSWF("/flash/copy_button.swf?1.1", "copy_button_flash", "1", "1", "8", null, {}, a, {})
     },observe: function() {
         $("nav").observe("mouseover", this.onNavigationMouseOver.bind(this));
         $("contents").observe("mouseover", this.onContentsMouseOver.bind(this));
