@@ -1,23 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-  <head>    
-	<style type="text/css">
-		.emo{
-			font-family:Monospace;
-			font-size:14;
-			height:50px;
-			width:50px;
-			float:left;
-			text-align: center;
-			display: table-cell; 
-			vertical-align: middle;
-		}
-		.emo:hover{
-			background:#F0F0F0;
-		}
-		
-	</style>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="css/styles.css" type="text/css" media="all" charset="utf-8">
+    <title>
+      emo
+    </title>
   </head>
-  <body>    
-       <%= @emos %>
+  <body id="page_index">  
+    <div id="header" class="clearfix">
+		<div id="nav">
+		  <div id="clipboard_empty">
+		  </div>
+		  <div id="clipboard_buffer_container" style="display: none;">
+			<div id="clipboard_buffer"></div><a href="#" id="clear_buffer" name="clear_buffer"></a>
+		  </div>
+		  <div id="formats">
+			<span class="bullet"></span> <a href="#" id="text_html_toggler" alternate-value="As text" name="text_html_toggler"></a>
+		  </div>
+		</div>
+    </div>
+    <div id="contents">
+      <% for @emo in @emos %><span data-entity=""><%= @emo %></span> <% end %>
+    </div>
+	<script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/effects.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.1/swfobject.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/all.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
