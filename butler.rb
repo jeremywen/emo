@@ -24,7 +24,7 @@ get "/?" do
 end
 
 get "/emo/?" do
-  redirect url_for('/emo/1000') 
+  redirect url_for('/emo/5000') 
 end
 
 get "/emo/:times/?" do 
