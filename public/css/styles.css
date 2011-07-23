@@ -22,6 +22,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 
 #contents { padding-top: 18px; line-height:4em;}
   #contents span {
+  font-family: "Andale Mono", "Courier New", Courier, monospace;
   display: block; width: 75px; height: 75px; text-align: center; vertical-align: middle;color: black; float:left;cursor: hand; cursor: pointer; }
   
   #contents div { color: black; padding: 1px 7px; 

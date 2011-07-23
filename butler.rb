@@ -24,7 +24,7 @@ get "/?" do
 end
 
 get "/emo/?" do
-  redirect url_for('/emo/5000') 
+  redirect url_for("/emo/#{max_emos()}") 
 end
 
 get "/emo/:times/?" do 
@@ -38,11 +38,10 @@ end
 
 helpers do
 
-  def file_link(file)
-    filename = Pathname.new(file).basename
-    "<li><a href='#{file}' target='_self'>#{filename}</a></li>"
+  def max_emos()
+    1300
   end
-
+  
   def gen_emo(x)
     emoArray = []
     @chars = File.readlines("possible_chars.txt")
@@ -62,8 +61,9 @@ helpers do
     @chars[rand(@chars.size)].chomp
   end
   
-  def max_emos()
-    5000
+  def file_link(file)
+    filename = Pathname.new(file).basename
+    "<li><a href='#{file}' target='_self'>#{filename}</a></li>"
   end
-  
+
 end
