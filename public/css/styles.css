@@ -1,5 +1,5 @@
 /* Reset CSS */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ol,ul {list-style:none;}caption,th {text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;}body {font:20px monospace;}table {font-size:inherit;font:100%;}select, input, textarea {font:99% monospace;}pre, code {font:115% monospace;*font-size:100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ol,ul {list-style:none;}caption,th {text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;}body {font:30px monospace;}table {font-size:inherit;font:100%;}select, input, textarea {font:99% monospace;}pre, code {font:115% monospace;*font-size:100%;}
 
 .clearfix:after {  content: "."; display: block; height: 0; clear: both; visibility: hidden;  }
 .clearfix { display: inline-block; }
@@ -22,8 +22,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
 
 #contents { padding-top: 18px; line-height:4em;}
   #contents span {
-  font-family: "Andale Mono", "Courier New", Courier, monospace;
-  display: block; width: 75px; height: 75px; text-align: center; vertical-align: middle;color: black; float:left;cursor: hand; cursor: pointer; }
+  display: block; width: 150px; height: 150px; text-align: center; vertical-align: middle;color: black; float:left;cursor: hand; cursor: pointer; }
   
   #contents div { color: black; padding: 1px 7px; 
     display: block; height: 25px; width: 42px;  float: left; }
