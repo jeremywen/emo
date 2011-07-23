@@ -28,7 +28,11 @@ get "/emo/?" do
 end
 
 get "/emo/:times/?" do 
-  @emos = gen_emo(params[:times].to_i)
+  x = params[:times].to_i
+  if x > max_emos()
+    redirect url_for("/emo/#{max_emos()}") 
+  end
+  @emos = gen_emo(x)
   erb :emo
 end
 
@@ -42,6 +46,7 @@ helpers do
   def gen_emo(x)
     emoArray = []
     @chars = File.readlines("possible_chars.txt")
+	x = [x,max_emos()].min
     x.times { |ch|
       outter = rnd_char()
 	  inner = rnd_char()
@@ -55,6 +60,10 @@ helpers do
   
   def rnd_char()
     @chars[rand(@chars.size)].chomp
+  end
+  
+  def max_emos()
+    5000
   end
   
 end
