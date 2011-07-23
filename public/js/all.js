@@ -88,7 +88,7 @@ var CopyBuffer = Class.create({initialize: function(a) {
         this.element.update(this.toHTML());
         this.copy()
     },notify: function() {
-        var a = {html: "#33ff00",text: "#FFFF00"}[this.format];
+        var a = {html: "#f4f4f4",text: "#f4f4f4"}[this.format];
         $(this.clickedElement).highlight({duration: 0.75,startcolor: a,endcolor: "#FFFFFF",restorecolor: "#FFFFFF"})
     },toHTML: function() {
         var a = "<span>", b = "</span>";
