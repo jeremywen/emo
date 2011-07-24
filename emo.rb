@@ -1,15 +1,3 @@
-# show midi pattern squares - by generating short midi files
-# show audio pattern squares - by generating short audio files
-# show beats gem pattern squares - by generating text for the beats gem
-# show smiley image squares
-# bookmarklet to paste emo into imo chat
-# need a rating system for emo, too many bad ones
-# and the middle char should not be the same as the outer ones
-# rating system based on happiness-sadness-angryness. 
-# categorize each one to be, store it, and put them in order, color them
-# infinite scroll to keep it from running out of memory on large numbers
-
-
 require 'sinatra'
 require 'pathname'
 require "erb"
