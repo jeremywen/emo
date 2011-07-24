@@ -77,7 +77,8 @@ pre, code {
     float: left;
 }
 #header #nav {
-    text-align: left;
+    padding:5px;
+	text-align: left;
     float: left;
 }
 #header #nav a {
