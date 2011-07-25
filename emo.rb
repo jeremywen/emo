@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'pathname'
-require "erb"
-include ERB::Util
+require 'haml'
   
 get "/?" do
   redirect "/emo/#{max_emos()}"
@@ -17,7 +16,7 @@ get "/emo/:times/?" do
     redirect "/emo/#{max_emos()}"
   end
   @emos = gen_emo(x)
-  erb :emo
+  haml :emo
 end
 
 helpers do
@@ -36,7 +35,7 @@ helpers do
 	  while outter.eql?(inner)
         inner = rnd_char()
 	  end
-      emo_array << "#{html_escape(outter+inner+outter)}"
+      emo_array << "#{outter+inner+outter}"
     } 
     emo_array
   end

@@ -1,0 +1,5 @@
+1311552418
+gen_emo	C:/code/ruby/emo/emo.rb	  def gen_emo(x)
+max_emos	C:/code/ruby/emo/emo.rb	  def max_emos()
+rnd_char	C:/code/ruby/emo/emo.rb	  def rnd_char()
+trackClick	C:/code/ruby/emo/public/js/all.js	function trackClick(a)
