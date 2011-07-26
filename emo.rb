@@ -1,3 +1,20 @@
+# IDEAS
+# -------------------
+# maybe just simple up/down arrow buttons for ranking
+# ajax click options at the top
+# option to separate what can be eyes, what can be noses
+# bookmarklet to paste emo into imo chat
+# need a rating system for emo, too many bad ones
+# rating system based on happiness-sadness-angryness. 
+# categorize each one to be, store it, and put them in order, color them
+# infinite scroll to keep it from running out of memory on large numbers
+# rest option to return text only
+#
+# REFERENCE
+# -------------------
+# http://en.wikipedia.org/wiki/List_of_Unicode_characters
+# http://www.copypastecharacter.com/
+
 require 'sinatra'
 require 'pathname'
 require 'haml'
