@@ -23,6 +23,11 @@ get "/?" do
   redirect "/emo/#{max_emos()}"
 end
 
+get "/emo/chars/?" do  
+  @emos = possible_chars()
+  haml :emo
+end
+
 get "/emo/?" do
   redirect "/emo/#{max_emos()}"
 end
@@ -33,11 +38,6 @@ get "/emo/:times/?" do
     redirect "/emo/#{max_emos()}"
   end
   @emos = gen_emo(x)
-  haml :emo
-end
-
-get "/emo/chars" do  
-  @emos = possible_chars()
   haml :emo
 end
 
