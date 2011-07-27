@@ -36,6 +36,15 @@ get "/emo/:times/?" do
   haml :emo
 end
 
+get "/emo/chars" do  
+  @emos = possible_chars()
+  haml :emo
+end
+
+
+#######################################
+# Helpers
+#######################################
 helpers do
 
   def max_emos()
@@ -43,8 +52,8 @@ helpers do
   end
   
   def gen_emo(x)
+    @chars = possible_chars()
     emo_array = []
-    @chars = File.readlines("possible_chars.txt")
 	x = [x,max_emos()].min
     x.times { |ch|
       outter = rnd_char()
@@ -55,6 +64,10 @@ helpers do
       emo_array << "#{outter+inner+outter}"
     } 
     emo_array
+  end
+  
+  def possible_chars()
+    File.readlines("possible_chars.txt")
   end
   
   def rnd_char()
