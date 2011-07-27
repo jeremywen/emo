@@ -23,6 +23,10 @@ get "/?" do
   redirect "/emo/#{max_emos()}"
 end
 
+get "/emo/one/?" do  
+  gen_emo(1)
+end
+
 get "/emo/chars/?" do  
   @emos = possible_chars()
   haml :emo
