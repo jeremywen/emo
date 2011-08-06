@@ -18,43 +18,59 @@
 require 'sinatra'
 require 'pathname'
 require 'haml'
-  
-get "/?" do
-  redirect "/emo/#{max_emos()}"
+require "sinatra/reloader" if development?
+
+#######################################################################################
+# Settings
+#######################################################################################
+set :max_emos, 1300
+set :possible_chars, File.readlines("possible_chars.txt")
+
+configure do
+  puts "[][][][][][][][][][][][][][][][][][][][][][]"
+  puts "[][][][][][][][][][][][][][][][][][][][][][]"
+  puts "[][][][][][][][]EMO STARTED [][][][][][][][]"
+  puts "[][][][][][][][][][][][][][][][][][][][][][]"
+  puts "[][][][][][][][][][][][][][][][][][][][][][]"
+  puts Time.now
+  puts "settings.possible_chars.size() = " + settings.possible_chars.size().to_s
+  puts "settings.max_emos" + settings.max_emos.to_s
 end
 
+#######################################################################################
+# Routes
+#######################################################################################
 get "/emo/chars/?" do  
-  @emos = possible_chars()
+  @emos = settings.possible_chars
   haml :emo
-end
-
-get "/emo/?" do
-  redirect "/emo/#{max_emos()}"
 end
 
 get "/emo/:times/?" do 
   x = params[:times].to_i
-  if x > max_emos()
-    redirect "/emo/#{max_emos()}"
+  if x > settings.max_emos
+    redirect "/emo/#{settings.max_emos}"
   end
   @emos = gen_emo(x)
   haml :emo
 end
 
+get "/emo/?" do
+  redirect "/emo/#{settings.max_emos}"
+end
 
-#######################################
+get "/?" do
+  redirect "/emo/#{settings.max_emos}"
+end
+
+#######################################################################################
 # Helpers
-#######################################
+#######################################################################################
 helpers do
 
-  def max_emos()
-    1300
-  end
-  
   def gen_emo(x)
-    @chars = possible_chars()
+    @chars = settings.possible_chars
     emo_array = []
-	x = [x,max_emos()].min
+	x = [x,settings.max_emos].min
     x.times { |ch|
       outter = rnd_char()
 	  inner = rnd_char()
@@ -64,10 +80,6 @@ helpers do
       emo_array << "#{outter+inner+outter}"
     } 
     emo_array
-  end
-  
-  def possible_chars()
-    File.readlines("possible_chars.txt")
   end
   
   def rnd_char()

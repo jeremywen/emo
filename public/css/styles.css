@@ -78,8 +78,8 @@ pre, code {
 }
 #header #nav {
     padding:5px;
-	text-align: left;
-    float: left;
+	text-align: center;
+    float: center;
 }
 #header #nav a {
     font-size: 1em;
@@ -154,6 +154,9 @@ body.clipboard-has-contents #clipboard_empty {
     margin-right: 15px;
 }
 #dotcom {
-    text-align: right;
-    float: right;
+    vertical-align: middle;
+    line-height:4em;
+    text-align: center;
+    float: center;
+    font-size: 14px;
 }
