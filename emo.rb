@@ -29,7 +29,7 @@ set :possible_chars, File.readlines("possible_chars.txt")
 
 configure do
   puts "[][][][][][][][][][][][][][][][][][][][][][]"
-  puts "[][][][][][][][][][][][][][][][][][][][][][]"
+  puts "[][][][][][][][][][][][][][][][][][][][][][]" 
   puts "[][][][][][][][]EMO STARTED [][][][][][][][]"
   puts "[][][][][][][][][][][][][][][][][][][][][][]"
   puts "[][][][][][][][][][][][][][][][][][][][][][]"
@@ -47,7 +47,12 @@ get "/emo/one/?" do
 end
 
 get "/emo/chars/?" do  
-  @emos = settings.possible_chars
+  emo_array = []
+  settings.possible_chars.each_with_index.map do |c,i|
+    emo_array << "#{i.to_s}: #{c.to_s}"
+  end
+  
+  @emos = emo_array
   haml :emo
 end
 
